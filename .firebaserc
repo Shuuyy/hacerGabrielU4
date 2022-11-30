@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "hacerunidad4": {
+      "hosting": {
+        "hacerU4": [
+          "hacerunidad4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "hacerunidad4"
+  }
+}

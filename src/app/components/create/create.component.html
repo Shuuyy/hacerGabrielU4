@@ -1,0 +1,45 @@
+<div class="container mt-4 sticky-top ">
+
+    <mat-card class="shadow-lg p-5 mb-5 bg-body rounded">
+        <mat-card-header>
+            <mat-card-title>Agregar usuarios</mat-card-title>
+            <mat-card-subtitle class="m-1 card-subtitle"> Registra un nuevo usuario</mat-card-subtitle>
+        </mat-card-header>
+
+        <form [formGroup]="createStudent" (ngSubmit)="saveStudent()">
+
+            <div class="p-4">
+                <div class="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Apellido</mat-label>
+                        <input matInput formControlName="lastName">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Calificación</mat-label>
+                        <input type="number" matInput formControlName="calification">
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+            <mat-card-actions align="end">
+                <div>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!createStudent.valid" >Guardar</button>
+                    <button  (click)="reset()" mat-button color="warn" [disabled]="!createStudent.valid">Cancelar</button>
+                </div>
+            </mat-card-actions>
+        </form>
+        <div *ngIf="submitted">
+            <mat-progress-bar mode="indeterminate" ></mat-progress-bar>
+        </div>
+    </mat-card>
+
+</div>

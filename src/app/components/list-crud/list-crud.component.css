@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+}
+
+i {
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.trash{
+color: red;
+}
+
+.edit{
+    color: #673ab7;
+}

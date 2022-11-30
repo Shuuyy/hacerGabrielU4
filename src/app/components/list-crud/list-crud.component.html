@@ -1,0 +1,49 @@
+<div class="container mt-4">
+    <mat-card class="shadow-lg p-5 mb-5 bg-body rounded">
+        <mat-card-header>
+          <mat-card-title>Lista de registros</mat-card-title>
+           
+              
+        </mat-card-header>
+        <table #table mat-table [dataSource]="dataSource" >
+        
+          
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> # </th>
+              <td mat-cell *matCellDef="let element; let i = index;">{{i+1}} </td>
+            </ng-container>
+          
+            
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Nombre </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+           
+            <ng-container matColumnDef="lastName">
+              <th mat-header-cell *matHeaderCellDef> Appellido </th>
+              <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+            </ng-container>
+          
+     
+            <ng-container matColumnDef="calification">
+              <th mat-header-cell *matHeaderCellDef> Calificación </th>
+              <td mat-cell *matCellDef="let element"> {{element.calification}} </td>
+            </ng-container>
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                <td mat-cell *matCellDef="let element"> 
+                    <i class="fa-solid fa-trash m-1 trash" (click)="deleteStudent(element.id)"></i>
+                    
+                </td>
+              </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+      </mat-card>
+
+     
+
+</div> 
